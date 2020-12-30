@@ -1,0 +1,91 @@
+<%- include("partials/header") %>
+
+
+
+<style>
+    body{
+        background: url('https://images.unsplash.com/photo-1526657782461-9fe13402a841?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTZ8fHdvcmt8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .ui.main.text{
+background-color: rgba(180, 180, 180, 0.5);
+}
+
+.ui.huge.header{
+   color:black;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-size:x-large;
+   font-weight:100;
+   font-style:oblique;
+}
+h2{
+
+color:black;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-size:x-large;
+   font-weight:100;
+   font-style:oblique;
+
+}
+
+a{
+   color: black;
+}
+
+p{
+
+color:black;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   font-size:medium;
+   font-weight:100;
+   font-style:oblique;
+
+}
+</style>
+        </div>
+        <div id="below navbar">
+
+            <h1>hidden lol</h1>
+            <div class="ui main text container segment">
+                
+                    <div class="ui huge header" style="text-align: center;">
+                        Student Achievement App
+                    </div>
+                    <h2>Student Details:</h2>
+                    <%=user.userid%>
+                    <br>
+                    <%=user.username%>
+                        <div class="ui top-attached">
+                            <div class="item">
+                                <ol>
+                                        <% achs.forEach(ach => { %> 
+                                        <li><div class="content">
+                                            <p>Type: <%= ach.achtype %></p>
+                                        </div>
+                                        <div class="desciption">
+                                            <p>Description: <%= ach.desc %></p>
+                                        </div>
+                                        <div class="content">
+                                            <a href="<%=ach.link%>">Link to Drive folder</a>
+                                        </div>
+                                        
+                                        
+                                        </li>
+                                        <br>
+                                        <br>
+                                        <% }); %>
+                                </ol>
+                            </div>
+                        </div>
+                    <a class="ui secondary button" onclick="window.print()" style="margin: 10px 0;">Generate Report</a> 
+                </div>
+
+
+
+
+
+
+            <%- include("partials/footer") %>

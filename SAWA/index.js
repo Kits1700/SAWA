@@ -1,3 +1,9 @@
+if(process.env.NODE_ENV !=="production")
+{
+    require('dotenv').config();
+}
+
+
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
@@ -27,8 +33,10 @@ app.set("view engine","ejs");
 app.listen(3000, () => { 
     console.log('Server listening on port 3000'); 
 });
+//'mongodb://localhost:27017/SAWA'
 
-mongoose.connect('mongodb://localhost:27017/SAWA', {
+const dbUrl = process.env.DB_URL;
+mongoose.connect('mongodb+srv://keerthana17:Artist17@cluster0.iku0i.mongodb.net/SAWA?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
